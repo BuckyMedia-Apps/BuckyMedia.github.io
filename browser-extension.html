@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browser Extension — BuckyMedia</title>
+<meta name="description" content="The BuckyMedia browser extension for Chrome, Edge and Brave: analyze the current tab, configure your download, and play video in the mini-player.">
+<link rel="icon" type="image/png" href="assets/img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="filmstrip"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/img/favicon-256.png" alt="BuckyMedia logo">
+      BuckyMedia
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="desktop-app.html">Desktop App</a>
+      <a href="browser-extension.html" class="current">Browser Extension</a>
+      <a href="mcp.html">MCP</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener" class="support-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-1 3-3 4-3 7a3 3 0 0 0 6 0c0-3-2-4-3-7Z"/><path d="M5 13c-1.2 1.6-1.5 3-1 5 1.3-.3 2.4-1 3-2"/><path d="M19 13c1.2 1.6 1.5 3 1 5-1.3-.3-2.4-1-3-2"/><path d="M12 12v4"/><path d="M8.5 20c1-1.6 2-2 3.5-2s2.5.4 3.5 2"/></svg>
+        Support
+      </a>
+    </nav>
+    <div class="header-tools">
+      <button class="lang-btn" aria-label="Change language" title="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z"/></svg>
+      </button>
+      <button class="theme-btn" aria-label="Cycle site theme" title="Cycle site theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c-1 3-3 4-3 7a3 3 0 0 0 6 0c0-3-2-4-3-7Z"/><path d="M5 13c-1.2 1.6-1.5 3-1 5 1.3-.3 2.4-1 3-2"/><path d="M19 13c1.2 1.6 1.5 3 1 5-1.3-.3-2.4-1-3-2"/><path d="M12 12v4"/><path d="M8.5 20c1-1.6 2-2 3.5-2s2.5.4 3.5 2"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="lang-popover">
+        <p>Translate this page:</p>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-bottom: 30px;">
+    <div class="wrap" style="grid-template-columns: 1fr; text-align:center;">
+      <div class="reveal in" style="margin: 0 auto;">
+        <span class="eyebrow"><span class="dot"></span> For Chrome, Edge and Brave</span>
+        <h1>Download from the <span class="accent">tab you're already on.</span></h1>
+        <p class="lede" style="margin-left:auto; margin-right:auto;">The extension talks directly to the BuckyMedia desktop app: it sends the current page's URL over, and hands back every format the app found — no copy-pasting links.</p>
+        <div class="pill-row" style="justify-content:center;">
+          <span class="pill">Requires the desktop app running</span>
+          <span class="pill">Simple / Advanced modes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+
+      <div class="step">
+        <div class="step-media reveal">
+          <img src="assets/img/E-Step-01.png" alt="Extension panel with the analyze button highlighted">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 01</span>
+          <h3>Analyze the current tab</h3>
+          <p>Open the extension and click <strong>Analyze</strong> to scan the page you're on for downloadable video and audio. Flip the switch in the top-right corner any time to move between <strong>Simple</strong> and <strong>Advanced</strong> mode.</p>
+        </div>
+      </div>
+
+      <div class="step reverse">
+        <div class="step-media reveal">
+          <img src="assets/img/E-Step-02.png" alt="Extension panel showing format, quality, subtitles and audio track options with the download button highlighted">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 02</span>
+          <h3>Choose your settings and download</h3>
+          <p>Pick format, quality, subtitles and audio track, then click <strong>Download</strong>. The file downloads through the desktop app, then you can monitor the progress of your downloads and your history in the browser extension.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-media reveal">
+          <img src="assets/img/E-Step-03.png" alt="Extension panel with the play button highlighted">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 03</span>
+          <h3>Or just play it</h3>
+          <p>Click <strong>Play</strong> to send the video straight to BuckyMedia's built-in player in mini-player mode, so you can keep watching in a small floating window over everything else. <em>This feature is in development (Beta).</em></p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Install the extension</h2>
+        <p>Free, and it works alongside the desktop app you already know.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener" class="btn" style="background:#2c1a05; color:#fbe7cf;">Get it from GitHub</a>
+          <a href="desktop-app.html" class="btn btn-ghost">Get the desktop app first</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="tagline-strip"><span>Full features free.</span><span>Ad-free.</span><span>For everyone.</span><span>Forever.</span></div>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/img/favicon-256.png" alt="BuckyMedia logo">
+          BuckyMedia
+        </a>
+        <p>Free video downloading, a real media catalog, and an AI-agent-friendly toolkit — built by one indie developer who happens to be a cat and his two human developer employees.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Apps</h4>
+          <ul>
+            <li><a href="desktop-app.html">Desktop App</a></li>
+            <li><a href="browser-extension.html">Browser Extension</a></li>
+            <li><a href="mcp.html">MCP Server</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener">Support / Donate</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> BuckyMedia.</span>
+      <span>Made with ❤️ by BuckyDevelopaws</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="assets/js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

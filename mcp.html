@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP Server — BuckyMedia</title>
+<meta name="description" content="BuckyMediaMCP connects the BuckyMedia desktop app to Claude Desktop and other MCP-compatible AI agents.">
+<link rel="icon" type="image/png" href="assets/img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="filmstrip"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/img/favicon-256.png" alt="BuckyMedia logo">
+      BuckyMedia
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="desktop-app.html">Desktop App</a>
+      <a href="browser-extension.html">Browser Extension</a>
+      <a href="mcp.html" class="current">MCP</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener" class="support-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-1 3-3 4-3 7a3 3 0 0 0 6 0c0-3-2-4-3-7Z"/><path d="M5 13c-1.2 1.6-1.5 3-1 5 1.3-.3 2.4-1 3-2"/><path d="M19 13c1.2 1.6 1.5 3 1 5-1.3-.3-2.4-1-3-2"/><path d="M12 12v4"/><path d="M8.5 20c1-1.6 2-2 3.5-2s2.5.4 3.5 2"/></svg>
+        Support
+      </a>
+    </nav>
+    <div class="header-tools">
+      <button class="lang-btn" aria-label="Change language" title="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z"/></svg>
+      </button>
+      <button class="theme-btn" aria-label="Cycle site theme" title="Cycle site theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c-1 3-3 4-3 7a3 3 0 0 0 6 0c0-3-2-4-3-7Z"/><path d="M5 13c-1.2 1.6-1.5 3-1 5 1.3-.3 2.4-1 3-2"/><path d="M19 13c1.2 1.6 1.5 3 1 5-1.3-.3-2.4-1-3-2"/><path d="M12 12v4"/><path d="M8.5 20c1-1.6 2-2 3.5-2s2.5.4 3.5 2"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="lang-popover">
+        <p>Translate this page:</p>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-bottom: 20px;">
+    <div class="wrap" style="grid-template-columns: 1fr; text-align:center;">
+      <div class="reveal in" style="margin: 0 auto; max-width: 720px;">
+        <span class="eyebrow"><span class="dot"></span> For Claude Desktop and other MCP agents</span>
+        <h1>Let your AI agent <span class="accent">queue the download.</span></h1>
+        <p class="lede" style="margin-left:auto; margin-right:auto;">BuckyMediaMCP is a small MCP server that sits between an AI agent and the BuckyMedia desktop app. Ask your agent to grab a video, and it talks to BuckyMedia for you.</p>
+        <div class="pill-row" style="justify-content:center;">
+          <span class="pill">Windows</span>
+          <span class="pill">One-click installer</span>
+          <span class="pill">Auto-registers in Claude Desktop</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="panel reveal">
+        <span class="step-num">BEFORE YOU INSTALL</span>
+        <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin: 10px 0 14px;">What you need</h3>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Windows.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> BuckyMedia installed and running (it can stay minimized in the system tray).</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> In BuckyMedia's Settings, <strong>"Commands for AI agents (Beta)"</strong> turned on. It's off by default — an intentional, opt-in security choice — so this step can't be skipped, or every tool will fail with a "could not reach BuckyMedia" error even while BuckyMedia is running.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Claude Desktop installed, if that's the agent you plan to use.</li>
+        </ul>
+      </div>
+
+      <div class="panel reveal">
+        <span class="step-num">INSTALLATION</span>
+        <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin: 10px 0 14px;">Download and run the installer</h3>
+        <p style="color: var(--ink-soft); margin: 0 0 6px;">BuckyMediaMCP ships as a single Windows installer, built with Velopack — no cloning, no dependencies, no manual JSON editing.</p>
+        <ul class="callout-list">
+          <li><span class="num">1</span> Download the <a href="https://github.com/BuckyMedia-Apps/mcp/releases/latest/download/BuckyMediaMCP-win-Setup.exe" rel="noopener" style="font-weight:700; color:var(--orange-dark);">Installer</a> of the MCP.</li>
+          <li><span class="num">2</span> Run the installer.</li>
+          <li><span class="num">3</span> Use with your favorite AI agent.</li>
+        </ul>
+        <p style="color: var(--ink-soft); margin: 18px 0 0;">The installer registers BuckyMediaMCP as an MCP server directly in Claude Desktop's configuration for you. Restart Claude Desktop once after installing so it picks up the new server. Uninstalling BuckyMediaMCP removes that entry again automatically.</p>
+      </div>
+
+      <div class="panel reveal">
+        <span class="step-num">ON THE ROADMAP</span>
+        <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin: 10px 0 14px;">Straight from the source</h3>
+        <p style="color: var(--ink-soft); margin: 0;">BuckyMediaMCP will also be submitted to the official connector catalogs of AI apps like Claude Desktop, so it can eventually be found and installed from inside those apps directly, with no installer download at all.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head left reveal">
+        <h2>Tools exposed to your agent</h2>
+        <p>One tool per command BuckyMedia's AI-agent pipe supports. Claude discovers all of them automatically once the server is connected.</p>
+      </div>
+      <div class="panel reveal" style="overflow-x:auto;">
+        <table style="width:100%; border-collapse: collapse; font-size: 0.92rem;">
+          <thead>
+            <tr style="text-align:left; border-bottom: 1px solid var(--line);">
+              <th style="padding: 10px 14px 10px 0; font-family: var(--font-mono); color: var(--orange-dark); white-space:nowrap;">Tool</th>
+              <th style="padding: 10px 0; color: var(--ink-soft); font-weight:600;">What it does</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">wake_buckymedia</td><td style="padding: 10px 0; color: var(--ink-soft);">Brings the BuckyMedia window to the foreground.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">analyze_video</td><td style="padding: 10px 0; color: var(--ink-soft);">Analyzes a video URL and returns its title, duration, thumbnail, and the real qualities, formats, subtitles and audio tracks available.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">download_video</td><td style="padding: 10px 0; color: var(--ink-soft);">Queues a download and returns a task ID. Supports clip trimming and a custom destination folder.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">play_video</td><td style="padding: 10px 0; color: var(--ink-soft);">Plays a video URL directly in BuckyMedia's built-in player, optionally in mini-player mode, fullscreen, or at a set screen position.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">set_player_mode</td><td style="padding: 10px 0; color: var(--ink-soft);">Switches the open player between normal and mini (picture-in-picture) mode.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">set_fullscreen</td><td style="padding: 10px 0; color: var(--ink-soft);">Turns fullscreen on or off for the open player.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">set_player_position</td><td style="padding: 10px 0; color: var(--ink-soft);">Moves the open player window to a screen position, clamped to the current monitor.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">pause_download</td><td style="padding: 10px 0; color: var(--ink-soft);">Pauses one download, or all of them.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">resume_download</td><td style="padding: 10px 0; color: var(--ink-soft);">Resumes a paused download.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">cancel_download</td><td style="padding: 10px 0; color: var(--ink-soft);">Cancels one download, or all of them.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">get_download_status</td><td style="padding: 10px 0; color: var(--ink-soft);">Returns the current download queue, with progress, speed, size and status.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">open_catalog</td><td style="padding: 10px 0; color: var(--ink-soft);">Opens or focuses BuckyMedia's media catalog window.</td></tr>
+            <tr style="border-bottom: 1px solid var(--line);"><td style="padding: 10px 14px 10px 0; font-family: var(--font-mono); white-space:nowrap;">open_catalog_search</td><td style="padding: 10px 0; color: var(--ink-soft);">Opens the catalog window with search results for a title, for you to pick from.</td></tr>
+            <tr><td style="padding: 10px 14px 0 0; font-family: var(--font-mono); white-space:nowrap;">search_movie</td><td style="padding: 10px 0; color: var(--ink-soft);">Searches installed catalog addons for a title and returns results with no UI shown.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="color: var(--ink-soft); margin-top: 18px;">If no default download folder is set in BuckyMedia's Settings, queuing a download opens a native "Save As" dialog that needs a quick human click — so a <code>download_video</code> call can take a moment to return. Setting a default folder in BuckyMedia avoids that.</p>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Wire it up in a few minutes</h2>
+        <p>Completely free — the same rule as everything else BuckyMedia ships.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a href="https://github.com/BuckyMedia-Apps/mcp/releases/latest/download/BuckyMediaMCP-win-Setup.exe" rel="noopener" class="btn" style="background:#2c1a05; color:#fbe7cf;">Download the installer</a>
+          <a href="desktop-app.html" class="btn btn-ghost">Get the desktop app first</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="tagline-strip"><span>Full features free.</span><span>Ad-free.</span><span>For everyone.</span><span>Forever.</span></div>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/img/favicon-256.png" alt="BuckyMedia logo">
+          BuckyMedia
+        </a>
+        <p>Free video downloading, a real media catalog, and an AI-agent-friendly toolkit — built by one indie developer who happens to be a cat and his two human developer employees.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Apps</h4>
+          <ul>
+            <li><a href="desktop-app.html">Desktop App</a></li>
+            <li><a href="browser-extension.html">Browser Extension</a></li>
+            <li><a href="mcp.html">MCP Server</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener">Support / Donate</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> BuckyMedia.</span>
+      <span>Made with ❤️ by BuckyDevelopaws</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="assets/js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BuckyMedia — Free downloader, catalog and player, made by an indie cat</title>
+<meta name="description" content="BuckyMedia is a free video downloader, a Stremio-protocol media catalog, a built-in browser and player, a browser extension, and an MCP server for AI agents. No ads, ever.">
+<link rel="icon" type="image/png" href="assets/img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="filmstrip"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/img/favicon-256.png" alt="BuckyMedia logo">
+      BuckyMedia
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="current">Home</a>
+      <a href="desktop-app.html">Desktop App</a>
+      <a href="browser-extension.html">Browser Extension</a>
+      <a href="mcp.html">MCP</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener" class="support-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-1 3-3 4-3 7a3 3 0 0 0 6 0c0-3-2-4-3-7Z"/><path d="M5 13c-1.2 1.6-1.5 3-1 5 1.3-.3 2.4-1 3-2"/><path d="M19 13c1.2 1.6 1.5 3 1 5-1.3-.3-2.4-1-3-2"/><path d="M12 12v4"/><path d="M8.5 20c1-1.6 2-2 3.5-2s2.5.4 3.5 2"/></svg>
+        Support
+      </a>
+    </nav>
+    <div class="header-tools">
+      <button class="lang-btn" aria-label="Change language" title="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z"/></svg>
+      </button>
+      <button class="theme-btn" aria-label="Cycle site theme" title="Cycle site theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c-1 3-3 4-3 7a3 3 0 0 0 6 0c0-3-2-4-3-7Z"/><path d="M5 13c-1.2 1.6-1.5 3-1 5 1.3-.3 2.4-1 3-2"/><path d="M19 13c1.2 1.6 1.5 3 1 5-1.3-.3-2.4-1-3-2"/><path d="M12 12v4"/><path d="M8.5 20c1-1.6 2-2 3.5-2s2.5.4 3.5 2"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="lang-popover">
+        <p>Translate this page:</p>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="wrap">
+            <div class="reveal in">
+                <span class="eyebrow"><span class="dot"></span> Built by one indie cat and two human developer employees</span>
+                <h1>Download, catalog and watch — <span class="accent">without the ads.</span></h1>
+                <p class="lede">BuckyMedia grabs video and audio from almost any site, organizes a full movies-and-series catalog, and plays it all back in a floating mini-player. Free today, free forever.</p>
+                <div class="hero-actions">
+                    <a href="https://github.com/BuckyMedia-Apps/desktop/releases/latest/download/BuckyMedia-win-Setup.exe" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" /></svg>
+                        Get the desktop app
+                    </a>
+                    <a href="mcp.html" class="btn btn-ghost">Connect it to Claude</a>
+                </div>
+                <div class="hero-badges">
+                    <span>🐾 100% free</span>
+                    <span>🚫 Zero ads</span>
+                    <span>🧩 Addon-friendly catalog</span>
+                </div>
+            </div>
+            <div class="hero-art reveal">
+                <img src="assets/img/D-Step-L.png" alt="BuckyMedia Launcher screen, to choose between the downloader and the catalog">
+                <div class="float-tag"><span class="paw">🐾</span> Made by BuckyDevelopaws</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apps">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>One cat, three tools</h2>
+                <p>Each piece works on its own, and all three talk to each other when you want them to.</p>
+            </div>
+            <div class="app-grid">
+                <a href="desktop-app.html" class="app-card reveal">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2" /><path d="M8 21h8M12 18v3" /></svg>
+                    </div>
+                    <h3>Desktop App</h3>
+                    <p>Download video and audio with the app under the hood, browse a Stremio-compatible catalog, and watch it all in a built-in player.</p>
+                    <span class="card-link">See how it works →</span>
+                </a>
+                <a href="browser-extension.html" class="app-card reveal">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10" /><path d="M12 2v10l7 7" /><path d="M12 2a10 10 0 0 1 10 10h-10Z" /></svg>
+                    </div>
+                    <h3>Browser Extension</h3>
+                    <p>A lightweight companion for Chrome, Edge and Brave that hands any page's video straight to the desktop app.</p>
+                    <span class="card-link">See how it works →</span>
+                </a>
+                <a href="mcp.html" class="app-card reveal">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="4" /><path d="M9 9h.01M15 9h.01M8 15c1 1.3 2.3 2 4 2s3-.7 4-2" /></svg>
+                    </div>
+                    <h3>MCP Server</h3>
+                    <p>Connect BuckyMedia to Claude Desktop and other MCP-compatible AI agents, so an agent can queue downloads for you.</p>
+                    <span class="card-link">See how it works →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalog-preview">
+        <div class="wrap">
+            <div class="step reverse">
+                <div class="step-media reveal">
+                    <img src="assets/img/D-Step-p01.png" alt="BuckyMedia catalog showing featured titles and popular picks">
+                </div>
+                <div class="reveal">
+                    <span class="step-num">DOWNLOADER</span>
+                    <h3>A complete video/audio downloader</h3>
+                    <p>The downloader lets you download videos, audio, subtitles and a specific audio track from hundreds of websites in the most popular formats and even in 8K and 4K resolutions. To use the advanced download features, simply enable "Advanced Mode" in the app settings.</p>
+                    <a href="desktop-app.html#downloader" class="card-link" style="text-decoration:none; font-weight:700; color:var(--orange-dark);">Explore the downloader tour →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="catalog-preview">
+        <div class="wrap">
+            <div class="step">
+                <div class="step-media reveal">
+                    <img src="assets/img/M-Step-02.png" alt="BuckyMedia catalog showing featured titles and popular picks">
+                </div>
+                <div class="reveal">
+                    <span class="step-num">CATALOG</span>
+                    <h3>A movies-and-series catalog you actually control</h3>
+                    <p>The catalog speaks the same protocol as Stremio addons, so any compatible addon plugs right in. Install one with an API key, paste a manifest URL, and reorder your addons to decide whose results show up first.</p>
+                    <a href="desktop-app.html#catalog" class="card-link" style="text-decoration:none; font-weight:700; color:var(--orange-dark);">Explore the catalog tour →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-free">
+        <div class="wrap">
+            <div class="philosophy">
+                <div class="reveal">
+                    <span class="eyebrow"><span class="dot"></span> The cat behind the code</span>
+                    <h2 style="font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.4rem); margin: 0 0 16px;">Free is not a trial. It's the whole plan.</h2>
+                    <p style="color: var(--ink-soft); font-size: 1.05rem;">BuckyDevelopaws builds BuckyMedia and every app around it as a gift to the community — no ads, no premium tier, no catch. Got an idea for a feature? Suggestions are always welcome. The best way to support the project costs nothing: share the apps, and share the site. But if you prefer, you can also support us through our support channels; our team greatly appreciates your support.</p>
+                    <div class="hero-actions" style="margin-top:24px;">
+                        <a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener" class="btn btn-primary">Support the project</a>
+                    </div>
+                </div>
+                <div class="signature-card reveal">
+                    <blockquote>"I make the tools I've always wanted with a personal style, and I give them away. Your download history is yours. Your catalog is yours. My ads budget is zero, because I don't have one."</blockquote>
+                    <cite>— BuckyDevelopaws, creator of BuckyMedia</cite>
+                    <div class="pill-row">
+                        <span class="pill">No ads</span>
+                        <span class="pill">No telemetry sold</span>
+                        <span class="pill">Open to feature requests</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="themes">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <h2>Choose a look, feel comfortable.</h2>
+                <p>The desktop app ships with switchable themes — We appreciate the support by giving away hand-drawn themes to our supporters, and we will also be giving away new themes on our social media to all users of our apps.</p>
+            </div>
+            <div class="theme-strip reveal">
+                <img src="assets/img/S-Step-02.png" alt="Forest theme applied to the settings window" style="border-radius: var(--radius-md); border: 1px solid var(--line); box-shadow: var(--shadow);">
+            </div>
+        </div>
+    </section>
+
+    <section id="cta">
+        <div class="wrap">
+            <div class="cta-band reveal">
+                <h2>Ready to stop paying for downloads?</h2>
+                <p>Grab the desktop app, install the extension, or wire it up to Claude — pick your starting point.</p>
+                <div class="hero-actions" style="justify-content:center;">
+                    <a href="https://github.com/BuckyMedia-Apps/desktop/releases/latest/download/BuckyMedia-win-Setup.exe" class="btn" style="background:#2c1a05; color:#fbe7cf;">Get the desktop app</a>
+                    <a href="mcp.html" class="btn btn-ghost">Set up the MCP server</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="tagline-strip"><span>Full features free.</span><span>Ad-free.</span><span>For everyone.</span><span>Forever.</span></div>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/img/favicon-256.png" alt="BuckyMedia logo">
+          BuckyMedia
+        </a>
+        <p>Free video downloading, a real media catalog, and an AI-agent-friendly toolkit — built by one indie developer who happens to be a cat and his two human developer employees.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Apps</h4>
+          <ul>
+            <li><a href="desktop-app.html">Desktop App</a></li>
+            <li><a href="browser-extension.html">Browser Extension</a></li>
+            <li><a href="mcp.html">MCP Server</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/BuckyMedia-Apps" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener">Support / Donate</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> BuckyMedia.</span>
+      <span>Made with ❤️ by BuckyDevelopaws</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="assets/js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

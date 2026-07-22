@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desktop App — BuckyMedia</title>
+<meta name="description" content="A tour of the BuckyMedia desktop app: download videos, browse a Stremio-compatible catalog, use the built-in browser and mini-player, and customize your setup.">
+<link rel="icon" type="image/png" href="assets/img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="filmstrip"></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">
+      <img src="assets/img/favicon-256.png" alt="BuckyMedia logo">
+      BuckyMedia
+    </a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="desktop-app.html" class="current">Desktop App</a>
+      <a href="browser-extension.html">Browser Extension</a>
+      <a href="mcp.html">MCP</a>
+      <a href="faq.html">FAQ</a>
+      <a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener" class="support-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-1 3-3 4-3 7a3 3 0 0 0 6 0c0-3-2-4-3-7Z"/><path d="M5 13c-1.2 1.6-1.5 3-1 5 1.3-.3 2.4-1 3-2"/><path d="M19 13c1.2 1.6 1.5 3 1 5-1.3-.3-2.4-1-3-2"/><path d="M12 12v4"/><path d="M8.5 20c1-1.6 2-2 3.5-2s2.5.4 3.5 2"/></svg>
+        Support
+      </a>
+    </nav>
+    <div class="header-tools">
+      <button class="lang-btn" aria-label="Change language" title="Change language">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z"/></svg>
+      </button>
+      <button class="theme-btn" aria-label="Cycle site theme" title="Cycle site theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2c-1 3-3 4-3 7a3 3 0 0 0 6 0c0-3-2-4-3-7Z"/><path d="M5 13c-1.2 1.6-1.5 3-1 5 1.3-.3 2.4-1 3-2"/><path d="M19 13c1.2 1.6 1.5 3 1 5-1.3-.3-2.4-1-3-2"/><path d="M12 12v4"/><path d="M8.5 20c1-1.6 2-2 3.5-2s2.5.4 3.5 2"/></svg>
+      </button>
+      <button class="nav-toggle" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="lang-popover">
+        <p>Translate this page:</p>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" style="padding-bottom: 30px;">
+    <div class="wrap" style="grid-template-columns: 1fr; text-align:center;">
+      <div class="reveal in" style="margin: 0 auto;">
+        <span class="eyebrow"><span class="dot"></span> The main app</span>
+        <h1>Everything lives in <span class="accent">one window.</span></h1>
+        <p class="lede" style="margin-left:auto; margin-right:auto;">A complete downloader, a Stremio-compatible catalog, a built-in browser tuned for downloading, and a mini-player you can float over anything else on your screen.</p>
+        <div class="pill-row" style="justify-content:center;">
+          <span class="pill">Downloader</span>
+          <span class="pill">Catalog</span>
+          <span class="pill">Built-in browser</span>
+          <span class="pill">Mini-player (PiP)</span>
+          <span class="pill">Named-pipe control for AI agents</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download-tour">
+    <div class="wrap">
+      <div class="section-head left reveal">
+        <h2>Downloading a video</h2>
+        <p>From the launcher to a finished file, in a handful of clicks.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-media reveal">
+          <img src="assets/img/D-Step-01.png" alt="BuckyMedia launcher with the Downloader card highlighted">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 01</span>
+          <h3>Open the downloader</h3>
+          <p>From the launcher, click the <strong>Downloader</strong> card to open the video and audio downloader.</p>
+        </div>
+      </div>
+
+      <div class="step reverse">
+        <div class="step-media reveal">
+          <img src="assets/img/D-Step-02.png" alt="BuckyMedia downloader window with numbered callouts over the url bar, analyze button, format options, trim checkbox, downloads button and browser button">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 02</span>
+          <h3>Paste a link and analyze it</h3>
+          <p>A preview of the downloader:</p>
+          <ul class="callout-list">
+            <li><span class="num">1</span> Paste your video's URL into the address bar.</li>
+            <li><span class="num">2</span> Click <strong>Analyze</strong> to fetch the video's title, thumbnail, and every available format.</li>
+            <li><span class="num">3</span> Use the dropdowns to pick format, quality, subtitles and audio track. This is <strong>Advanced Mode</strong> — turn it off in Settings for a single, simple dropdown instead.</li>
+            <li><span class="num">4</span> Check <strong>Trim video clip</strong> if you only need part of the video.</li>
+            <li><span class="num">5</span> Open <strong>Downloads</strong> to see active transfers and your full history.</li>
+            <li><span class="num">6</span> Open the <strong>built-in browser</strong> when a site needs to be browsed before you can grab its link.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-media reveal">
+          <img src="assets/img/P-Step-01.png" alt="Pop-up asking whether to download only the current video or the full playlist">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 03</span>
+          <h3>Playlist? Your call</h3>
+          <p>Paste a playlist link and BuckyMedia asks first: grab <strong>only this video</strong>, or open the <strong>full playlist</strong> to choose per-video settings.</p>
+        </div>
+      </div>
+
+      <div class="step reverse">
+        <div class="step-media reveal">
+          <img src="assets/img/P-Step-02.png" alt="Full playlist view listing every video with its own format, quality and download button">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 04</span>
+          <h3>Fine-tune every video in a playlist</h3>
+          <p>Set format, quality, subtitles and audio track for the whole playlist at once, or override any single video, then download everything or just your selection.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-media reveal">
+          <img src="assets/img/D-Step-d.png" alt="Download history window showing a completed download with pause, cancel and clear controls">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 05</span>
+          <h3>Keep an eye on your downloads</h3>
+          <p>The downloads window shows every active transfer plus your full history, with one-click controls to pause, cancel or clear it all.</p>
+        </div>
+      </div>
+
+      <div class="step reverse">
+        <div class="step-media reveal">
+          <img src="assets/img/D-Step-06.png" alt="Toolbar icons for settings, downloads, catalog and browser highlighted in the top-left corner">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 06</span>
+          <h3>Everything, one click away</h3>
+          <p>Settings, downloads, support window(just in case) and the catalog are all sit in the same corner, so switching between them never breaks your flow.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-media reveal">
+          <img src="assets/img/B-Step-02.png" alt="Built-in browser open on a stock video site, ready to analyze and download from the current page">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 07</span>
+          <h3>Use the built-in browser</h3>
+          <p>Some sites need a bit of browsing before a link is ready to grab. The built-in browser is tuned for exactly that, with <strong>Analyze</strong> and <strong>Download</strong> sitting right in its toolbar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog" style="background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <div class="wrap">
+      <div class="section-head left reveal">
+        <h2>Browsing the catalog</h2>
+        <p>A movies-and-series library that speaks the same protocol as Stremio addons — without the Stremio name.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-media reveal">
+          <img src="assets/img/M-Step-01.png" alt="Launcher with the Movies card highlighted">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 01</span>
+          <h3>Open the catalog</h3>
+          <p>From the same launcher, click <strong>Movies</strong> to open the catalog.</p>
+        </div>
+      </div>
+
+      <div class="step reverse">
+        <div class="step-media reveal">
+          <img src="assets/img/M-Step-02.png" alt="Catalog home screen with a featured title and rows of popular picks">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 02</span>
+          <h3>Explore and watch</h3>
+          <p>Browse featured titles and popular picks, then hit <strong>Watch Now</strong> to see the available results from your installed add-ons.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-media reveal">
+          <img src="assets/img/A-Step-01.png" alt="Addons screen showing install with API key, install by manifest URL, and priority reordering arrows">
+        </div>
+        <div class="reveal">
+          <span class="step-num">STEP 03</span>
+          <h3>Add addons, set their priority</h3>
+          <ul class="callout-list">
+            <li><span class="num">1</span> Install an addon with an API key straight from a service.</li>
+            <li><span class="num">2</span> Or paste an addon's manifest URL to install it directly.</li>
+            <li><span class="num">3</span> Reorder your addons — the one on top wins for covers and metadata, so putting TMDb above Cinemeta means TMDb's results show first.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="customize">
+    <div class="wrap">
+      <div class="section-head left reveal">
+        <h2>Make it yours</h2>
+        <p>Themes change the app's colors and backgrounds — and the extension's, too.</p>
+      </div>
+      <div class="duo reveal">
+        <figure>
+          <img src="assets/img/S-Step-01.png" alt="Settings window with theme gallery, gift code field and language selector highlighted">
+          <figcaption>Pick a theme, redeem a gift code, or switch the interface language.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/S-Step-02.png" alt="Settings window shown with a green forest theme applied">
+          <figcaption>Every theme reskins the whole app — colors, backgrounds, everything.</figcaption>
+        </figure>
+      </div>
+      <p style="color: var(--ink-soft); margin-top: 22px;">New themes unlock with a gift code. We appreciate the support by giving away hand-drawn themes to our supporters, and we will also be giving away new themes on our social media to all users of our apps.</p>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <h2>Grab the desktop app</h2>
+        <p>Free, no account required, no ads — ever.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a href="https://github.com/BuckyMedia-Apps/desktop/releases/latest/download/BuckyMedia-win-Setup.exe" rel="noopener" class="btn" style="background:#2c1a05; color:#fbe7cf;">Download for Windows</a>
+          <a href="mcp.html" class="btn btn-ghost">Connect it to an AI agent</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="tagline-strip"><span>Full features free.</span><span>Ad-free.</span><span>For everyone.</span><span>Forever.</span></div>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/img/favicon-256.png" alt="BuckyMedia logo">
+          BuckyMedia
+        </a>
+        <p>Free video downloading, a real media catalog, and an AI-agent-friendly toolkit — built by one indie developer who happens to be a cat and his two human developer employees.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Apps</h4>
+          <ul>
+            <li><a href="desktop-app.html">Desktop App</a></li>
+            <li><a href="browser-extension.html">Browser Extension</a></li>
+            <li><a href="mcp.html">MCP Server</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Project</h4>
+          <ul>
+            <li><a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/BuckyDevelopaws" target="_blank" rel="noopener">Support / Donate</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> BuckyMedia.</span>
+      <span>Made with ❤️ by BuckyDevelopaws</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="assets/js/main.js"></script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
